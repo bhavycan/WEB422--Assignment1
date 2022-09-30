@@ -7,7 +7,7 @@
  * Name: Bhavy Piyushkumar Patel
  * Student ID: 121048219
  * Date: Sept. 16, 2022
- * Cyclic Link: https://teal-puzzled-centipede.cyclic.app/
+ * Cyclic Link: 
  *
  ********************************************************************************/
 
@@ -44,7 +44,7 @@ app.post("/api/movies", async function (req, res) {
   }
 });
 
-//get movie
+//get movies
 app.get("/api/movies", async function (req, res) {
   try {
     const data = await db.getAllMovies(
@@ -54,6 +54,7 @@ app.get("/api/movies", async function (req, res) {
     );
     if (data.length === 0) {
       return res.status(204).send();
+      console.log('data length is zero');
     }
     res.json(data);
   } catch (error) {
